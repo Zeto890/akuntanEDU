@@ -1,122 +1,199 @@
-/* ======================================
-   FIX MOBILE LAYOUT — FINAL VERSION
-   Tambahkan di paling bawah CSS
-====================================== */
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-@media (max-width: 768px) {
+/* GLOBAL */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #333;
+}
+html { scroll-behavior: smooth; }
 
-    /* ==== HERO ==== */
-    #home .hero-content h1 {
-        font-size: 1.7rem !important;
-        line-height: 1.3;
-        text-align: center;
-        padding: 0 10px;
-    }
+/* COLOR THEME */
+:root {
+    --purple: #6a0dad;
+    --gold: #f1c40f;
+    --purple-light: #9152d9;
+    --purple-dark: #4a0677;
+}
 
-    #home .hero-content p {
-        font-size: 0.95rem;
-        text-align: center;
-        padding: 0 15px;
-    }
+/* NAVBAR */
+.custom-nav {
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.navbar-brand {
+    font-size: 1.4rem;
+    color: var(--gold) !important;
+}
+.nav-link {
+    font-weight: 500;
+    color: #fff !important;
+    margin: 0 10px;
+}
+.nav-link:hover {
+    color: var(--gold) !important;
+}
 
-    .hero-buttons {
-        text-align: center;
-    }
+/* HERO */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    position: relative;
+    padding-top: 80px;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+.hero-text {
+    position: relative;
+    z-index: 2;
+}
+.hero-img {
+    max-width: 420px;
+    border-radius: 15px;
+    border: 3px solid var(--gold);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
 
-    .hero-buttons a {
-        width: 90%;
-        margin: 6px auto;
-    }
+/* FEATURE CARD (Materi + Keunggulan) */
+.feature-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 35px rgba(0,0,0,0.15);
+}
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.feature-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
 
-    .hero-image img {
-        max-width: 260px !important;
-        margin-top: 25px;
-        padding: 10px !important;
-    }
+/* CONTACT SECTION */
+.contact-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 900px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+}
 
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
-    /* ==== MATERI CARD ==== */
-    .materi-card {
-        padding: 18px !important;
-    }
+.contact-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+.contact-item:hover {
+    background: #eee;
+    transform: translateY(-5px);
+}
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--gold));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-icon i {
+    color: white;
+    font-size: 1.5rem;
+}
+.contact-link {
+    color: var(--purple);
+    font-weight: 500;
+    text-decoration: none;
+}
+.contact-link:hover {
+    color: var(--gold);
+}
 
-    .materi-card .feature-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .materi-card p {
-        font-size: 0.9rem;
-    }
-
-    .materi-card h4 {
-        font-size: 1.1rem;
-    }
-
-
-    /* ==== CONTACT GRID ==== */
-    .contact-grid {
-        grid-template-columns: repeat(1, 1fr) !important;
-        gap: 15px !important;
-    }
-
-    .contact-item {
-        padding: 20px !important;
-    }
-
-    .contact-icon {
-        width: 55px !important;
-        height: 55px !important;
-    }
-
-    .contact-info h5 {
-        font-size: 1rem !important;
-    }
-
-    .contact-link {
-        font-size: 0.95rem !important;
-    }
-
-
-    /* ==== NAVBAR ==== */
-    .navbar-brand {
-        font-size: 1.2rem !important;
-    }
-
-    .nav-link {
-        font-size: 0.95rem;
-        padding: 8px 0;
-    }
-
-
-    /* ==== KEUNGGULAN ==== */
-    .feature-card {
-        padding: 18px !important;
-    }
-
-    .feature-card .feature-icon {
-        width: 60px !important;
-        height: 60px !important;
-    }
-
-    .feature-card p {
-        font-size: 0.9rem !important;
-    }
-
-
-    /* ==== FOOTER ==== */
-    footer p {
-        font-size: 0.9rem !important;
-    }
+/* FOOTER */
+.footer-custom {
+    background: linear-gradient(135deg, var(--purple-dark), #000);
+    color: #fff;
 }
 
 
-/* EXTRA SMALL (HP kecil) */
-@media (max-width: 480px) {
-    #home .hero-content h1 {
-        font-size: 1.45rem !important;
+
+/* ==================== RESPONSIVE FIX ==================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .hero-text h1 {
+        font-size: 1.9rem;
     }
-    .hero-image img {
-        max-width: 220px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .hero-text p {
+        text-align: center;
+    }
+
+    .hero-text a {
+        width: 100%;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-img {
+        width: 85%;
+        margin-top: 20px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.6rem;
     }
 }
