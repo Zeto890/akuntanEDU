@@ -1,133 +1,154 @@
-/* =========================================
-   IMPORT FONT
-========================================= */
+/* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
     color: #333;
-    overflow-x: hidden;
+    line-height: 1.6;
 }
-
-html { scroll-behavior: smooth; }
 
 /* =========================================
-   NAVBAR — UNGU GOLD
+   NAVBAR – Ungu Gold
 ========================================= */
 .navbar {
-    background: linear-gradient(135deg, #5A2D82, #3C1F5C) !important;
+    background: linear-gradient(135deg, #5A2D82 0%, #3C1F5C 100%) !important;
     box-shadow: 0 2px 20px rgba(0,0,0,0.15);
 }
+
 .navbar-brand {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #F5D76E !important;
 }
+
 .nav-link {
     font-weight: 500;
     color: #fff !important;
     margin: 0 10px;
     transition: 0.3s;
 }
-.nav-link:hover,
-.nav-link.active {
+
+.nav-link:hover {
     color: #F5D76E !important;
     transform: translateY(-2px);
 }
 
+.nav-link.active {
+    color: #F5D76E !important;
+}
+
 /* =========================================
-   HERO SECTION — FIX RESPONSIVE
+   HERO SECTION – FIX RESPONSIVE
 ========================================= */
 .hero-section {
-    background: linear-gradient(135deg, #5A2D82, #3C1F5C);
-    padding: 120px 0 60px;
+    background: linear-gradient(135deg, #5A2D82 0%, #3C1F5C 100%);
+    padding-top: 130px;
+    padding-bottom: 50px;
+    min-height: auto; /* FIX UTAMA */
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-}
+} 
+
 .hero-overlay {
-    position: absolute; inset: 0;
-    background: rgba(0,0,0,0.3);
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
     z-index: 1;
 }
+
 .hero-section .container {
     position: relative;
     z-index: 2;
 }
 
+/* HERO IMAGE FIX RESPONSIVE */
 .hero-image img {
-    max-width: 420px;
     width: 100%;
+    max-width: 300px; /* FIX HP */
+    height: auto;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px;
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(8px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     transition: 0.3s;
 }
+
 .hero-image img:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
 }
 
-/* MOBILE FIX */
+/* HP kecil */
+@media (max-width: 480px) {
+    .hero-image img {
+        max-width: 240px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-section {
-        padding-top: 140px;
-        min-height: auto;
         text-align: center;
-    }
-    .hero-content h1 {
-        font-size: 1.9rem;
-        line-height: 1.3;
     }
 }
 
 /* =========================================
-   FEATURE CARD — GOLD ACCENT
+   FEATURE CARD – Gold Elegant
 ========================================= */
 .feature-card {
     padding: 30px 20px;
     background: #fff;
     border-radius: 15px;
     border-top: 5px solid #D4AF37;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     text-align: center;
     transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
+
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 25px rgba(90,45,130,0.3);
+    box-shadow: 0 15px 30px rgba(90,45,130,0.3);
 }
+
 .feature-icon {
     width: 70px;
     height: 70px;
+    background: linear-gradient(135deg, #5A2D82 0%, #3C1F5C 100%);
     border-radius: 50%;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, #5A2D82, #3C1F5C);
     border: 3px solid #F5D76E;
-    display: flex; justify-content: center; align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
 }
+
 .feature-icon i {
+    font-size: 1.9rem;
     color: #fff;
-    font-size: 1.8rem;
 }
 
 /* =========================================
-   CONTACT SECTION — FIXED GRID RESPONSIVE
+   CONTACT SECTION – FIX GRID
 ========================================= */
 .contact-card {
     background: #fff;
     border-radius: 20px;
-    padding: 30px;
     border: 2px solid #D4AF37;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* ===== GRID FIX ===== */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -159,83 +180,98 @@ html { scroll-behavior: smooth; }
 .contact-item {
     background: #f8f9fa;
     border-radius: 15px;
-    padding: 22px;
-    text-align: center;
+    padding: 20px;
     border-bottom: 4px solid #D4AF37;
+    text-align: center;
     transition: 0.3s;
     min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .contact-item:hover {
-    background: #efe6ff;
-    transform: translateY(-4px);
+    background: #EFE6FF;
+    transform: translateY(-5px);
 }
 
 .contact-icon {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    margin: 0 auto 12px;
-    background: linear-gradient(135deg, #5A2D82, #3C1F5C);
     border: 3px solid #F5D76E;
-    display: flex; justify-content: center; align-items: center;
+    background: linear-gradient(135deg, #5A2D82 0%, #3C1F5C 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px;
 }
+
 .contact-icon i {
-    color: #fff;
     font-size: 1.3rem;
+    color: #fff;
 }
 
 .contact-link {
-    font-weight: 600;
     color: #5A2D82;
+    font-weight: 600;
     transition: 0.3s;
 }
+
 .contact-link:hover {
     color: #D4AF37;
 }
 
 /* =========================================
-   WHATSAPP FLOAT
+   WHATSAPP FLOATING BUTTON
 ========================================= */
-.whatsapp-btn {
+.whatsapp-float {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 1.8rem;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-    transition: 0.3s;
     z-index: 999;
 }
+
+.whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: 0.3s;
+}
+
 .whatsapp-btn:hover {
     transform: scale(1.1);
 }
 
 /* =========================================
-   FOOTER — UNGU GELAP GOLD
+   FOOTER
 ========================================= */
 footer {
     background: linear-gradient(135deg, #3C1F5C, #1D0F33);
     color: #fff;
 }
+
 .social-link {
     width: 40px;
     height: 40px;
-    background: rgba(255,255,255,0.1);
+    border: 1px solid #F5D76E;
     border-radius: 50%;
-    border: 1px solid #D4AF37;
-    display: flex; justify-content: center; align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
     color: #F5D76E;
     transition: 0.3s;
 }
+
 .social-link:hover {
     background: #F5D76E;
     color: #3C1F5C;
