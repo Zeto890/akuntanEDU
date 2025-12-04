@@ -1,199 +1,243 @@
-/* FONT */
+/* =========================================
+   IMPORT FONT
+========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* GLOBAL */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fff;
+    line-height: 1.6;
     color: #333;
+    overflow-x: hidden;
 }
+
 html { scroll-behavior: smooth; }
 
-/* COLOR THEME */
-:root {
-    --purple: #6a0dad;
-    --gold: #f1c40f;
-    --purple-light: #9152d9;
-    --purple-dark: #4a0677;
-}
-
-/* NAVBAR */
-.custom-nav {
-    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+/* =========================================
+   NAVBAR — UNGU GOLD
+========================================= */
+.navbar {
+    background: linear-gradient(135deg, #5A2D82, #3C1F5C) !important;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
 }
 .navbar-brand {
-    font-size: 1.4rem;
-    color: var(--gold) !important;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #F5D76E !important;
 }
 .nav-link {
     font-weight: 500;
     color: #fff !important;
     margin: 0 10px;
+    transition: 0.3s;
 }
-.nav-link:hover {
-    color: var(--gold) !important;
+.nav-link:hover,
+.nav-link.active {
+    color: #F5D76E !important;
+    transform: translateY(-2px);
 }
 
-/* HERO */
+/* =========================================
+   HERO SECTION — FIX RESPONSIVE
+========================================= */
 .hero-section {
-    min-height: 100vh;
-    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    background: linear-gradient(135deg, #5A2D82, #3C1F5C);
+    padding: 120px 0 60px;
     position: relative;
-    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
 }
-.hero-text {
+.hero-section .container {
     position: relative;
     z-index: 2;
 }
-.hero-img {
+
+.hero-image img {
     max-width: 420px;
+    width: 100%;
     border-radius: 15px;
-    border: 3px solid var(--gold);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+.hero-image img:hover {
+    transform: translateY(-6px);
 }
 
-/* FEATURE CARD (Materi + Keunggulan) */
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 140px;
+        min-height: auto;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 1.9rem;
+        line-height: 1.3;
+    }
+}
+
+/* =========================================
+   FEATURE CARD — GOLD ACCENT
+========================================= */
 .feature-card {
+    padding: 30px 20px;
     background: #fff;
-    padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    border-top: 5px solid #D4AF37;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: center;
     transition: 0.3s;
 }
 .feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 35px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(90,45,130,0.3);
 }
 .feature-icon {
     width: 70px;
     height: 70px;
-    margin: 0 auto 15px;
-    background: linear-gradient(135deg, var(--purple), var(--purple-light));
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #5A2D82, #3C1F5C);
+    border: 3px solid #F5D76E;
+    display: flex; justify-content: center; align-items: center;
 }
 .feature-icon i {
+    color: #fff;
     font-size: 1.8rem;
-    color: white;
 }
 
-/* CONTACT SECTION */
+/* =========================================
+   CONTACT SECTION — FIXED GRID RESPONSIVE
+========================================= */
 .contact-card {
     background: #fff;
-    padding: 30px;
     border-radius: 20px;
-    max-width: 900px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+    padding: 30px;
+    border: 2px solid #D4AF37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
+/* ===== GRID FIX ===== */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* HP besar */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* HP kecil */
+@media (max-width: 576px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 }
 
 .contact-item {
     background: #f8f9fa;
-    padding: 25px;
     border-radius: 15px;
+    padding: 22px;
     text-align: center;
+    border-bottom: 4px solid #D4AF37;
     transition: 0.3s;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .contact-item:hover {
-    background: #eee;
-    transform: translateY(-5px);
+    background: #efe6ff;
+    transform: translateY(-4px);
 }
+
 .contact-icon {
     width: 60px;
     height: 60px;
-    margin: 0 auto 10px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--purple), var(--gold));
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto 12px;
+    background: linear-gradient(135deg, #5A2D82, #3C1F5C);
+    border: 3px solid #F5D76E;
+    display: flex; justify-content: center; align-items: center;
 }
 .contact-icon i {
-    color: white;
-    font-size: 1.5rem;
+    color: #fff;
+    font-size: 1.3rem;
 }
+
 .contact-link {
-    color: var(--purple);
-    font-weight: 500;
-    text-decoration: none;
+    font-weight: 600;
+    color: #5A2D82;
+    transition: 0.3s;
 }
 .contact-link:hover {
-    color: var(--gold);
+    color: #D4AF37;
 }
 
-/* FOOTER */
-.footer-custom {
-    background: linear-gradient(135deg, var(--purple-dark), #000);
+/* =========================================
+   WHATSAPP FLOAT
+========================================= */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    transition: 0.3s;
+    z-index: 999;
+}
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   FOOTER — UNGU GELAP GOLD
+========================================= */
+footer {
+    background: linear-gradient(135deg, #3C1F5C, #1D0F33);
     color: #fff;
 }
-
-
-
-/* ==================== RESPONSIVE FIX ==================== */
-
-/* Tablet */
-@media (max-width: 992px) {
-    .hero-text h1 {
-        font-size: 1.9rem;
-    }
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    border: 1px solid #D4AF37;
+    display: flex; justify-content: center; align-items: center;
+    color: #F5D76E;
+    transition: 0.3s;
 }
-
-/* Mobile */
-@media (max-width: 768px) {
-
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-
-    .hero-text h1 {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-
-    .hero-text p {
-        text-align: center;
-    }
-
-    .hero-text a {
-        width: 100%;
-    }
-
-    .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero-img {
-        width: 85%;
-        margin-top: 20px;
-    }
-}
-
-/* Small Mobile */
-@media (max-width: 576px) {
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .feature-card {
-        padding: 20px;
-    }
-
-    .hero-text h1 {
-        font-size: 1.6rem;
-    }
+.social-link:hover {
+    background: #F5D76E;
+    color: #3C1F5C;
+    transform: translateY(-3px);
 }
