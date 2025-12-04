@@ -7,145 +7,122 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden !important;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     color: #333;
+    overflow-x: hidden;
     line-height: 1.6;
 }
+html {
+    scroll-behavior: smooth;
+}
 
-/* =========================================
-   NAVBAR – Ungu Gold
-========================================= */
+/* ================================
+   NAVBAR – Ungu + Gold
+================================ */
 .navbar {
-    background: linear-gradient(135deg, #5A2D82 0%, #3C1F5C 100%) !important;
+    background: linear-gradient(135deg, #5A2D82, #3C1F5C) !important;
     box-shadow: 0 2px 20px rgba(0,0,0,0.15);
 }
-
 .navbar-brand {
-    font-size: 1.5rem;
     font-weight: 700;
     color: #F5D76E !important;
+    font-size: 1.5rem;
 }
-
 .nav-link {
-    font-weight: 500;
     color: #fff !important;
     margin: 0 10px;
+    font-weight: 500;
     transition: 0.3s;
 }
-
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: #F5D76E !important;
     transform: translateY(-2px);
 }
 
-.nav-link.active {
-    color: #F5D76E !important;
-}
-
-/* =========================================
-   HERO SECTION – FIX RESPONSIVE
-========================================= */
+/* ================================
+   HERO — Teks + Gambar Samping
+================================ */
 .hero-section {
     background: linear-gradient(135deg, #5A2D82 0%, #3C1F5C 100%);
-    padding-top: 130px;
-    padding-bottom: 50px;
-    min-height: auto; /* FIX UTAMA */
-    position: relative;
-} 
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.2);
-    z-index: 1;
+    color: #fff;
+    padding: 150px 0 80px;
 }
 
-.hero-section .container {
-    position: relative;
-    z-index: 2;
+.hero-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
 }
 
-/* HERO IMAGE FIX RESPONSIVE */
+/* Text */
+.hero-text {
+    flex: 1;
+}
+.hero-text h1 {
+    line-height: 1.3;
+}
+.hero-text p {
+    font-size: 1.1rem;
+}
+
+/* Image */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 .hero-image img {
     width: 100%;
-    max-width: 300px; /* FIX HP */
-    height: auto;
+    max-width: 420px;
     border-radius: 15px;
-    padding: 15px;
+    padding: 18px;
     background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(8px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    transition: 0.3s;
 }
 
-.hero-image img:hover {
-    transform: translateY(-8px);
-}
-
-/* HP kecil */
-@media (max-width: 480px) {
-    .hero-image img {
-        max-width: 240px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        text-align: center;
-    }
-}
-
-/* =========================================
-   FEATURE CARD – Gold Elegant
-========================================= */
+/* ================================
+   FEATURE CARDS – Gold Accent
+================================ */
 .feature-card {
     padding: 30px 20px;
-    background: #fff;
     border-radius: 15px;
+    background: #fff;
     border-top: 5px solid #D4AF37;
     text-align: center;
     transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
-
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(90,45,130,0.3);
 }
-
 .feature-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #5A2D82 0%, #3C1F5C 100%);
+    background: linear-gradient(135deg, #5A2D82, #3C1F5C);
     border-radius: 50%;
-    border: 3px solid #F5D76E;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 3px solid #F5D76E;
     margin: 0 auto 20px;
 }
-
 .feature-icon i {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     color: #fff;
 }
 
-/* =========================================
-   CONTACT SECTION – FIX GRID
-========================================= */
+/* ================================
+   CONTACT SECTION — Grid Rapi
+================================ */
 .contact-card {
     background: #fff;
     border-radius: 20px;
-    border: 2px solid #D4AF37;
     padding: 30px;
+    border: 2px solid #D4AF37;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
@@ -155,58 +132,30 @@ body {
     gap: 20px;
 }
 
-/* Tablet */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* HP besar */
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* HP kecil */
-@media (max-width: 576px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-}
-
 .contact-item {
     background: #f8f9fa;
+    padding: 25px;
     border-radius: 15px;
-    padding: 20px;
-    border-bottom: 4px solid #D4AF37;
     text-align: center;
+    border-bottom: 4px solid #D4AF37;
     transition: 0.3s;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
-
 .contact-item:hover {
-    background: #EFE6FF;
-    transform: translateY(-5px);
+    background: #ede4ff;
+    transform: translateY(-4px);
 }
 
 .contact-icon {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #5A2D82, #3C1F5C);
     border-radius: 50%;
-    border: 3px solid #F5D76E;
-    background: linear-gradient(135deg, #5A2D82 0%, #3C1F5C 100%);
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0 auto 12px;
+    justify-content: center;
+    margin: 0 auto 15px;
+    border: 3px solid #F5D76E;
 }
-
 .contact-icon i {
     font-size: 1.3rem;
     color: #fff;
@@ -215,65 +164,72 @@ body {
 .contact-link {
     color: #5A2D82;
     font-weight: 600;
-    transition: 0.3s;
+    text-decoration: none;
 }
-
 .contact-link:hover {
     color: #D4AF37;
 }
 
-/* =========================================
-   WHATSAPP FLOATING BUTTON
-========================================= */
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 999;
-}
-
-.whatsapp-btn {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.8rem;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    transition: 0.3s;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-}
-
-/* =========================================
+/* ================================
    FOOTER
-========================================= */
+================================ */
 footer {
     background: linear-gradient(135deg, #3C1F5C, #1D0F33);
     color: #fff;
+    padding: 20px 0;
 }
 
 .social-link {
     width: 40px;
     height: 40px;
-    border: 1px solid #F5D76E;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgba(255,255,255,0.1);
     color: #F5D76E;
+    border: 1px solid #F5D76E;
     transition: 0.3s;
 }
-
 .social-link:hover {
     background: #F5D76E;
     color: #3C1F5C;
     transform: translateY(-3px);
+}
+
+/* ================================
+   RESPONSIVE — Fix HP Layout
+================================ */
+@media (max-width: 992px) {
+    .hero-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image img {
+        max-width: 340px;
+    }
+    .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding-top: 170px;
+    }
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    .hero-image img {
+        max-width: 260px;
+    }
+    .contact-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
